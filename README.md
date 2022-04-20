@@ -99,4 +99,4 @@ As a result we will get project `my_project` with 1 dataset `dataset_01`. Datase
 
 ### Demo
 Example of uploading pointclouds:
-![]()
+![](https://i.imgur.com/CPQTrm1.gif)
