@@ -89,7 +89,7 @@ As a result we will get project `my_project` with 1 dataset `dataset_01`. Datase
 
 <img data-key="sly-module-link" data-module-slug="supervisely-ecosystem/import-pointcloud-ply" src="https://i.imgur.com/tPmtSVS.png" width="500px" style='padding-bottom: 10px'/>
 
-**Step 2.** Run the application from the context menu of the directory with images on Team Files page
+**Step 2.** Run the application from the context menu of the directory with pointclouds on Team Files page
 
 <img src="https://i.imgur.com/fM7soJB.png" width="100%" style='padding-top: 10px'>  
 
