@@ -14,46 +14,56 @@ def import_pointcloud_ply(api: sly.Api, task_id: int):
         raise Exception(f"There are no files in selected directory: '{g.INPUT_PATH}'")
 
     project_name = f.get_project_name_from_input_path(g.INPUT_PATH)
-    datasets_names, datasets_images_map = f.get_datasets_images_map(dir_info)
+    f.download_project(api, g.INPUT_PATH)
 
+    datasets_names, datasets_images_map = f.get_datasets_items_map(
+        dir_info, g.STORAGE_DIR
+    )
     project = api.project.create(
         workspace_id=g.WORKSPACE_ID,
         name=project_name,
         type=sly.ProjectType.POINT_CLOUDS,
-        change_name_if_conflict=True
+        change_name_if_conflict=True,
     )
     for dataset_name in datasets_names:
         dataset_info = api.dataset.create(
-            project_id=project.id,
-            name=dataset_name,
-            change_name_if_conflict=True
+            project_id=project.id, name=dataset_name, change_name_if_conflict=True
         )
 
-        images_names = datasets_images_map[dataset_name]["ply_names"]
-        images_paths = datasets_images_map[dataset_name]["ply_paths"]
-        images_hashes = datasets_images_map[dataset_name]["ply_hashes"]
-        for batch_names, batch_paths, batch_hashes in progress_bar(
-                zip(
-                    sly.batched(seq=images_names, batch_size=10),
-                    sly.batched(seq=images_paths, batch_size=10),
-                    sly.batched(seq=images_hashes, batch_size=10),
-                ),
-                total=len(images_hashes) // 10,
-                message="Dataset: {!r}".format(dataset_name),
-        ):
+        ply_names = datasets_images_map[dataset_name]["ply_names"]
+        ply_paths = datasets_images_map[dataset_name]["ply_paths"]
+        ply_hashes = datasets_images_map[dataset_name]["ply_hashes"]
+        ply_rel_images_paths = datasets_images_map[dataset_name]["ply_related_images"][
+            "images_paths"
+        ]
+        ply_rel_images_meta_paths = datasets_images_map[dataset_name][
+            "ply_related_images"
+        ]["images_metas_paths"]
 
-            res_batch_names, res_batch_paths, local_save_dir = f.download_and_convert_dataset(
+        try:
+            pointclouds_infos = f.upload_pointclouds(
                 api=api,
-                names=batch_names,
-                paths=batch_paths,
-                hashes=batch_hashes,
-            )
-            api.pointcloud.upload_paths(
                 dataset_id=dataset_info.id,
-                names=res_batch_names,
-                paths=res_batch_paths,
+                dataset_name=dataset_info.name,
+                progress_bar=progress_bar,
+                ply_names=ply_names,
+                ply_paths=ply_paths,
+                ply_hashes=ply_hashes,
             )
-            sly.fs.remove_dir(dir_=local_save_dir)
+
+            if ply_rel_images_paths.count(None) != len(ply_rel_images_paths):
+                f.upload_related_images(
+                    api=api,
+                    dataset_name=dataset_info.name,
+                    progress_bar=progress_bar,
+                    pointclouds_infos=pointclouds_infos,
+                    ply_rel_images_paths=ply_rel_images_paths,
+                    ply_rel_images_meta_paths=ply_rel_images_meta_paths,
+                )
+        except:
+            sly.logger.error(msg=f"Couldn't upload files from '{dataset_name}' dataset. Please check directory's file "
+                                 f"structure, for subdirectories and duplicated file names")
+            continue
 
     sly.fs.remove_dir(dir_=g.STORAGE_DIR)
     if g.REMOVE_SOURCE:

@@ -16,6 +16,7 @@
   "icon": "https://i.imgur.com/mDH9HA3.png",
   "icon_background": "#FFFFFF",
   "headless": true,
+  "instance_version": "6.4.45",
   "context_menu": {
     "target": ["files_folder"]
   }

@@ -6,6 +6,8 @@ import supervisely as sly
 from dotenv import load_dotenv
 from fastapi import FastAPI
 from supervisely.app.fastapi import create
+from supervisely.io.fs import mkdir
+
 # from supervisely.pointcloud.pointcloud import ALLOWED_POINTCLOUD_EXTENSIONS
 
 app_root_directory = os.path.dirname(os.getcwd())
@@ -35,3 +37,4 @@ ALLOWED_POINTCLOUD_EXTENSIONS = [".ply"]
 # ALLOWED_POINTCLOUD_EXTENSIONS = ALLOWED_POINTCLOUD_EXTENSIONS
 
 STORAGE_DIR = os.path.join(app_root_directory, "debug", "data", "storage_dir")
+mkdir(STORAGE_DIR, True)
