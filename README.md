@@ -87,15 +87,15 @@ As a result we will get project `my_project` with 1 dataset `dataset_01`. Datase
 
 **Step 1.** Add [Import Pointclouds PLY](https://ecosystem.supervise.ly/apps/supervisely-ecosystem/import-pointcloud-ply) app to your team from Ecosystem
 
-<img data-key="sly-module-link" data-module-slug="supervisely-ecosystem/import-pointcloud-ply" src="https://i.imgur.com/tPmtSVS.png" width="500px" style='padding-bottom: 10px'/>
+<img data-key="sly-module-link" data-module-slug="supervisely-ecosystem/import-pointcloud-ply" src="https://i.imgur.com/7AHFXQ3.png" width="500px" style='padding-bottom: 10px'/>
 
 **Step 2.** Run the application from the context menu of the directory with pointclouds on Team Files page
 
-<img src="https://i.imgur.com/fM7soJB.png" width="100%" style='padding-top: 10px'>  
+<img src="https://i.imgur.com/NepdSfq.png" width="100%" style='padding-top: 10px'>  
 
 **Step 3.** Select options and press the Run button
 
-<img src="https://i.imgur.com/3XVTVQ8.png" width="80%" style='padding-top: 10px'>  
+<img src="https://i.imgur.com/ezaUHE9.png" width="80%" style='padding-top: 10px'>  
 
 ### Demo
 Example of uploading pointclouds:
