@@ -13,8 +13,8 @@
     "remove_source": true
   },
   "task_location": "workspace_tasks",
-  "icon": "https://i.imgur.com/35ZN6PE.png",
-  "icon_cover": true,
+  "icon": "https://i.imgur.com/qqkqtX6.png",
+  "icon_background": "#FFFFFF",
   "headless": true,
   "instance_version": "6.4.45",
   "context_menu": {
