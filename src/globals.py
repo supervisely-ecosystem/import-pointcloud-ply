@@ -17,8 +17,8 @@ print(f"App root directory: {app_root_directory}")
 sly.logger.info(f'PYTHONPATH={os.environ.get("PYTHONPATH", "")}')
 
 # order matters
-load_dotenv(os.path.join(app_root_directory, "secret_debug.env"))
-load_dotenv(os.path.join(app_root_directory, "debug.env"))
+# load_dotenv(os.path.join(app_root_directory, "secret_debug.env"))
+# load_dotenv(os.path.join(app_root_directory, "debug.env"))
 
 app = FastAPI()
 
