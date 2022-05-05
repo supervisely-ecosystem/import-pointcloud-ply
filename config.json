@@ -18,6 +18,9 @@
   "headless": true,
   "instance_version": "6.4.45",
   "context_menu": {
-    "target": ["files_folder"]
-  }
+    "target": [
+      "files_folder"
+    ]
+  },
+  "poster": "https://i.imgur.com/o5O5YtJ.png"
 }
