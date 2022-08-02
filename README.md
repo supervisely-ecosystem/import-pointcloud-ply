@@ -1,5 +1,5 @@
 <div align="center" markdown>
-<img src="https://i.imgur.com/o5O5YtJ.png"/>  
+<img src="https://user-images.githubusercontent.com/48245050/182405398-4b4e68ee-f687-429b-9f6b-abb0a12f7f29.png"/>  
 
 # Import Pointclouds PLY
 
