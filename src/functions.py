@@ -102,7 +102,6 @@ def get_datasets_items_map(dir_info: list, storage_dir) -> tuple:
         remote_file_path = file_info["path"]
         if g.IS_ON_AGENT:
             agent_id, remote_file_path = g.api.file.parse_agent_id_and_path(remote_file_path)
-
         full_path_file = f"{storage_dir}{remote_file_path}"
         file_ext = get_file_ext(full_path_file)
         if file_ext not in g.ALLOWED_POINTCLOUD_EXTENSIONS:
