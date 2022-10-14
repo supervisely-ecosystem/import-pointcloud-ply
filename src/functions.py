@@ -1,7 +1,8 @@
 import os
-from pathlib import Path
 import open3d as o3d
+from pathlib import Path
 import supervisely as sly
+
 from supervisely.api.module_api import ApiField
 from supervisely.app.widgets import SlyTqdm
 from supervisely.imaging.image import SUPPORTED_IMG_EXTS
@@ -49,7 +50,7 @@ def convert_items_in_dataset(names: list, paths: list) -> tuple:
 
 
 def download_project(api: sly.Api, input_path: str) -> str:
-    """Download target directory with pcd files."""
+    """Download target directory with ply files."""
     if g.IS_ON_AGENT:
         agent_id, cur_files_path = api.file.parse_agent_id_and_path(input_path)
     else:
@@ -101,6 +102,7 @@ def get_datasets_items_map(dir_info: list, storage_dir) -> tuple:
         remote_file_path = file_info["path"]
         if g.IS_ON_AGENT:
             agent_id, remote_file_path = g.api.file.parse_agent_id_and_path(remote_file_path)
+
         full_path_file = f"{storage_dir}{remote_file_path}"
         file_ext = get_file_ext(full_path_file)
         if file_ext not in g.ALLOWED_POINTCLOUD_EXTENSIONS:
@@ -160,13 +162,14 @@ def upload_pointclouds(
 ) -> list:
     """Convert ply to pcd and upload to project."""
     pointclouds_infos = None
+    batch_size = min(len(ply_names), 10)
     for batch_names, batch_paths, batch_hashes in progress_bar(
         zip(
-            sly.batched(seq=ply_names, batch_size=10),
-            sly.batched(seq=ply_paths, batch_size=10),
-            sly.batched(seq=ply_hashes, batch_size=10),
+            sly.batched(seq=ply_names, batch_size=batch_size),
+            sly.batched(seq=ply_paths, batch_size=batch_size),
+            sly.batched(seq=ply_hashes, batch_size=batch_size),
         ),
-        total=len(ply_paths) // 10,
+        total=len(ply_paths),
         message="Dataset: {!r} pointclouds".format(dataset_name),
     ):
         res_batch_names, res_batch_paths = convert_items_in_dataset(
