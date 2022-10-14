@@ -6,7 +6,7 @@
     "pointclouds"
   ],
   "description": "Import pointclouds without annotations in .ply format from Team Files",
-  "docker_image": "supervisely/base-py-sdk:6.35.0",
+  "docker_image": "supervisely/base-py-sdk:6.68.1",
   "main_script": "src/main.py",
   "modal_template": "src/modal.html",
   "modal_template_state": {
@@ -16,10 +16,13 @@
   "icon": "https://i.imgur.com/qqkqtX6.png",
   "icon_background": "#FFFFFF",
   "headless": true,
-  "instance_version": "6.4.45",
+  "min_agent_version": "6.7.4",
+  "min_instance_version": "6.5.46",
   "context_menu": {
+    "context_category": "Import",
     "target": [
-      "files_folder"
+      "files_folder",
+      "agent_folder"
     ]
   },
   "poster": "https://user-images.githubusercontent.com/106374579/183657811-118e7a0a-29b0-4dfe-874f-3f70c3cf1352.png"
