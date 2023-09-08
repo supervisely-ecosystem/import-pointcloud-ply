@@ -37,7 +37,8 @@ Be aware that "remove files after successful import" flag is enabled by default,
 
 Directory name defines project name, subdirectories define dataset names. Files in root directory will be moved to dataset with name "`ds0`".
 
-**Example 1. Import structure:**
+**Example 1. Import structure:**<br>
+ℹ️ You can download the archive with data example [here](https://github.com/supervisely-ecosystem/import-pointcloud-ply/files/12557689/my_ply_project.zip).
 
 ```
 my_project
