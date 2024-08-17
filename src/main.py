@@ -3,6 +3,7 @@ from supervisely.app.widgets import SlyTqdm
 
 import functions as f
 import globals as g
+import workflow as w
 
 progress_bar = SlyTqdm()
 
@@ -75,7 +76,7 @@ def import_pointcloud_ply(api: sly.Api, task_id: int):
     api.task.set_output_project(
         task_id=task_id, project_id=project.id, project_name=project.name
     )
-
+    w.workflow_output(g.api, project.id)
 
 if __name__ == "__main__":
     sly.logger.info(
