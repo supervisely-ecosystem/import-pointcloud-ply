@@ -10,7 +10,7 @@
   <a href="#Demo">Demo</a>
 </p>
 
-[![](https://img.shields.io/badge/supervisely-ecosystem-brightgreen)](https://ecosystem.supervisely.com/apps/supervisely-ecosystem/import-pointcloud-ply)
+[![](https://img.shields.io/badge/supervisely-ecosystem-brightgreen)](../../../../supervisely-ecosystem/import-pointcloud-ply)
 [![](https://img.shields.io/badge/slack-chat-green.svg?logo=slack)](https://supervisely.com/slack)
 ![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/supervisely-ecosystem/import-pointcloud-ply)
 [![views](https://app.supervisely.com/img/badges/views/supervisely-ecosystem/import-pointcloud-ply.png)](https://supervisely.com)
@@ -93,7 +93,7 @@ As a result we will get project `my_project` with 1 dataset `dataset_01`. Datase
 
 # How to Run
 
-**Step 1.** Add [Import Pointclouds PLY](https://ecosystem.supervisely.com/apps/supervisely-ecosystem/import-pointcloud-ply) app to your team from Ecosystem
+**Step 1.** Add [Import Pointclouds PLY](../../../../supervisely-ecosystem/import-pointcloud-ply) app to your team from Ecosystem
 
 <img data-key="sly-module-link" data-module-slug="supervisely-ecosystem/import-pointcloud-ply" src="https://i.imgur.com/7AHFXQ3.png" width="500px" style='padding-bottom: 10px'/>
 
