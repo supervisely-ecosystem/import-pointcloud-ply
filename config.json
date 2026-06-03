@@ -1,29 +1,29 @@
 {
-    "name": "Import Pointclouds PLY",
-    "type": "app",
-    "categories": [
-        "import",
-        "pointclouds"
-    ],
-    "description": "Import pointclouds without annotations in .ply format from Team Files",
-    "docker_image": "supervisely/import-export:6.73.564",
-    "main_script": "src/main.py",
-    "modal_template": "src/modal.html",
-    "modal_template_state": {
-        "remove_source": true
-    },
-    "task_location": "workspace_tasks",
-    "icon": "https://i.imgur.com/qqkqtX6.png",
-    "icon_background": "#FFFFFF",
-    "headless": true,
-    "min_agent_version": "6.7.4",
-    "instance_version": "6.15.60",
-    "context_menu": {
-        "context_category": "Import",
-        "target": [
-            "files_folder",
-            "agent_folder"
-        ]
-    },
-    "poster": "https://user-images.githubusercontent.com/106374579/183657811-118e7a0a-29b0-4dfe-874f-3f70c3cf1352.png"
+  "name": "Import Point Clouds PLY",
+  "type": "app",
+  "categories": [
+    "import",
+    "pointclouds"
+  ],
+  "description": "Import point clouds without annotations in .ply format from Team Files",
+  "docker_image": "supervisely/import-export:6.73.564",
+  "main_script": "src/main.py",
+  "modal_template": "src/modal.html",
+  "modal_template_state": {
+    "remove_source": true
+  },
+  "task_location": "workspace_tasks",
+  "icon": "https://i.imgur.com/qqkqtX6.png",
+  "icon_background": "#FFFFFF",
+  "headless": true,
+  "min_agent_version": "6.7.4",
+  "instance_version": "6.15.60",
+  "context_menu": {
+    "context_category": "Import",
+    "target": [
+      "files_folder",
+      "agent_folder"
+    ]
+  },
+  "poster": "https://user-images.githubusercontent.com/106374579/183657811-118e7a0a-29b0-4dfe-874f-3f70c3cf1352.png"
 }

@@ -2,7 +2,7 @@
 
 <img src="https://user-images.githubusercontent.com/106374579/183657811-118e7a0a-29b0-4dfe-874f-3f70c3cf1352.png"/>  
 
-# Import Pointclouds PLY
+# Import Point Clouds PLY
 
 <p align="center">
   <a href="#Overview">Overview</a> •
@@ -20,7 +20,7 @@
 
 # Overview
 
-This app allows you to upload pointcloud PLY files with (or without) related images.
+This app allows you to upload point cloud PLY files with (or without) related images.
 These files will be automatically converted to `.PCD` format and uploaded to Supervisely.
 The new pointloud project will be created. 
 
@@ -68,7 +68,7 @@ my_project
         └── kitti_0000000001.ply
 ```
 
-In this case only the one dataset `dataset_01` will be created with all pointcloud files.
+In this case only the one dataset `dataset_01` will be created with all point cloud files.
 
 
 **Example 3. PLY files with photo context:**
@@ -89,15 +89,15 @@ if you want to attach photo context to ply file just create a directory `related
 Then create directory <filename_with_ext> (in this example we name directory kitti_0000000001_ply - it's a filename + extension + all symbols . are replaced to _) 
 and put there images and corresponding json files with projection matrix. See example for more info.
 
-As a result we will get project `my_project` with 1 dataset `dataset_01`. Dataset will contain 2 pointcloud files, `kitti_0000000001.ply` with related image, and `frame.ply` without related image.
+As a result we will get project `my_project` with 1 dataset `dataset_01`. Dataset will contain 2 point cloud files, `kitti_0000000001.ply` with related image, and `frame.ply` without related image.
 
 # How to Run
 
-**Step 1.** Add [Import Pointclouds PLY](https://ecosystem.supervisely.com/apps/supervisely-ecosystem/import-pointcloud-ply) app to your team from Ecosystem
+**Step 1.** Add [Import Point Clouds PLY](https://ecosystem.supervisely.com/apps/supervisely-ecosystem/import-pointcloud-ply) app to your team from Ecosystem
 
-<img data-key="sly-module-link" data-module-slug="supervisely-ecosystem/import-pointcloud-ply" src="https://i.imgur.com/7AHFXQ3.png" width="500px" style='padding-bottom: 10px'/>
+<img data-key="sly-module-link" data-module-slug="supervisely-ecosystem/import-point cloud-ply" src="https://i.imgur.com/7AHFXQ3.png" width="500px" style='padding-bottom: 10px'/>
 
-**Step 2.** Run the application from the context menu of the directory with pointclouds on Team Files page
+**Step 2.** Run the application from the context menu of the directory with point clouds on Team Files page
 
 <img src="https://i.imgur.com/NepdSfq.png" width="100%" style='padding-top: 10px'>  
 
@@ -106,5 +106,5 @@ As a result we will get project `my_project` with 1 dataset `dataset_01`. Datase
 <img src="https://i.imgur.com/ezaUHE9.png" width="80%" style='padding-top: 10px'>  
 
 ### Demo
-Example of uploading pointclouds:
+Example of uploading point clouds:
 ![](https://i.imgur.com/CPQTrm1.gif)
